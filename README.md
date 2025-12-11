@@ -88,16 +88,4 @@ Ir a Aplicaciones -> Actualizar lista de aplicaciones.
 
 Buscar "Asset Lending Management" e instalar.
 
-Autor: [Tu Nombre] Desarrollado como proyecto de especialización en ERP Odoo.
-
-
-### 💡 Un consejo final para tu GitHub
-
-Cuando subas este README, te recomiendo encarecidamente que **añadas una captura de pantalla** (screenshot) de la vista de formulario del viaje o del alumno.
-
-1.  Haz una captura donde se vea el formulario con las pestañas (notebooks) que creamos.
-2.  Guarda la imagen en una carpeta llamada `static/description/screenshot.png` dentro de tu módulo.
-3.  Descomenta o añade esta línea en el README después del título:
-    `![Screenshot](static/description/screenshot.png)`
-
-¡Eso hace que el repositorio sea 100% más atractivo visualmente!
+Autor: [Jorge del Hoyo Ballestín] Desarrollado como proyecto de especialización en ERP Odoo.
