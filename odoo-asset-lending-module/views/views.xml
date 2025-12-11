@@ -1,0 +1,292 @@
+<odoo>
+
+  <!-- Alumno -->
+  <record id="alumno_action" model="ir.actions.act_window">
+    <field name="name">Alumnos</field>
+    <field name="res_model">asset.alumno</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="alumno_view_list" model="ir.ui.view">
+    <field name="name">asset.alumno.list</field>
+    <field name="model">asset.alumno</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="nombre" />
+        <field name="fecha_nacimiento" />
+        <field name="pasaporte" />
+        <field name="fecha_caducidad_pasaporte" />
+        <field name="edad" />
+        <field name="compra_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="alumno_view_form" model="ir.ui.view">
+    <field name="name">asset.alumno.form</field>
+    <field name="model">asset.alumno</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <div class="oe_title">
+              <h1><field name="nombre" placeholder="Nombre del Alumno"/></h1>
+          </div>
+          <group>
+            <group>
+                <field name="fecha_nacimiento" />
+                <field name="edad" />
+            </group>
+            <group>
+                <field name="pasaporte" />
+                <field name="fecha_caducidad_pasaporte" />
+            </group>
+          </group>
+          <notebook>
+              <page string="Historial de Compras">
+                  <field name="compra_ids"/>
+              </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Viaje -->
+  <record id="viaje_action" model="ir.actions.act_window">
+    <field name="name">Viajes</field>
+    <field name="res_model">asset.viaje</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="viaje_view_list" model="ir.ui.view">
+    <field name="name">asset.viaje.list</field>
+    <field name="model">asset.viaje</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="fecha_salida" />
+        <field name="fecha_regreso" />
+        <field name="precio_base" />
+        <field name="duracion_dias" />
+        <field name="compra_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="viaje_view_form" model="ir.ui.view">
+    <field name="name">asset.viaje.form</field>
+    <field name="model">asset.viaje</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <div class="oe_title">
+              <h1><field name="name"/></h1>
+          </div>
+          <group>
+            <group>
+                <field name="fecha_salida" />
+                <field name="fecha_regreso" />
+            </group>
+            <group>
+                <field name="precio_base" />
+                <field name="duracion_dias" />
+            </group>
+          </group>
+          <notebook>
+              <page string="Inscripciones">
+                  <field name="compra_ids"/>
+              </page>
+              <page string="Actividades Extra">
+                  <field name="actividad_extra_ids"/>
+              </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Compra -->
+  <record id="compra_action" model="ir.actions.act_window">
+    <field name="name">Compras</field>
+    <field name="res_model">asset.compra</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="compra_view_list" model="ir.ui.view">
+    <field name="name">asset.compra.list</field>
+    <field name="model">asset.compra</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="codigo_reserva" />
+        <field name="fecha_inscripcion" />
+        <field name="alumno_id" />
+        <field name="viaje_id" />
+        <field name="precio_final" />
+      </list>
+    </field>
+  </record>
+
+  <record id="compra_view_form" model="ir.ui.view">
+    <field name="name">asset.compra.form</field>
+    <field name="model">asset.compra</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <div class="oe_title">
+              <h1><field name="codigo_reserva"/></h1>
+          </div>
+          <group>
+            <group>
+                <field name="alumno_id" />
+                <field name="viaje_id" />
+            </group>
+            <group>
+                <field name="fecha_inscripcion" />
+                <field name="precio_final" />
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Seguro Viaje -->
+  <record id="seguro_viaje_action" model="ir.actions.act_window">
+    <field name="name">Seguros Viajes</field>
+    <field name="res_model">asset.seguro.viaje</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="seguro_viaje_view_list" model="ir.ui.view">
+    <field name="name">asset.seguro.viaje.list</field>
+    <field name="model">asset.seguro.viaje</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="precio" />
+        <field name="tipo_cobertura" />
+        <field name="compra_id" />
+      </list>
+    </field>
+  </record>
+
+  <record id="seguro_viaje_view_form" model="ir.ui.view">
+    <field name="name">asset.seguro.viaje.form</field>
+    <field name="model">asset.seguro.viaje</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="precio" />
+            <field name="tipo_cobertura" />
+            <field name="compra_id" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Actividad Extra -->
+  <record id="actividad_extra_action" model="ir.actions.act_window">
+    <field name="name">Actividades Extra</field>
+    <field name="res_model">asset.actividad.extra</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="actividad_extra_view_list" model="ir.ui.view">
+    <field name="name">asset.actividad.extra.list</field>
+    <field name="model">asset.actividad.extra</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="fecha_realizacion" />
+        <field name="viaje_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="actividad_extra_view_form" model="ir.ui.view">
+    <field name="name">asset.actividad.extra.form</field>
+    <field name="model">asset.actividad.extra</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="fecha_realizacion" />
+            <field name="viaje_ids" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Guia turistico -->
+  <record id="guia_turistico_action" model="ir.actions.act_window">
+    <field name="name">Guia</field>
+    <field name="res_model">asset.guia.turistico</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="guia_turistico_view_list" model="ir.ui.view">
+    <field name="name">asset.guia.turistico.list</field>
+    <field name="model">asset.guia.turistico</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="telefono" />
+        <field name="disponible" />
+      </list>
+    </field>
+  </record>
+
+  <record id="guia_turistico_view_form" model="ir.ui.view">
+    <field name="name">asset.guia.turistico.form</field>
+    <field name="model">asset.guia.turistico</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="telefono" />
+            <field name="disponible" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <menuitem id="root_menu" name="Root"/>
+  <menuitem id="gestor_menu" name="Gestor" parent="root_menu"/>
+  <menuitem
+    id="alumno_menu"
+    name="Alumnos"
+    action="alumno_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="viaje_menu"
+    name="Viajes"
+    action="viaje_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="compra_menu"
+    name="Compras"
+    action="compra_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="seguro_viaje_menu"
+    name="Seguros"
+    action="seguro_viaje_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="actividad_extra_menu"
+    name="Actividad Extra"
+    action="actividad_extra_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="guia_turistico_menu"
+    name="Guia Turistico"
+    action="guia_turistico_action"
+    parent="gestor_menu"/>
+</odoo>
